@@ -1,0 +1,42 @@
+-->Yes, when you call the constructor of a class that extends the JFrame class, a new frame (window) will be created. This is because the constructor of your class, which extends JFrame, implicitly calls the constructor of the JFrame class, initializing the frame.
+-->It is crucial to call setVisible(true) to make the frame appear on the screen. Without this call, the frame is created but not displayed.
+--> Use setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE) to ensure that the application exits when the frame is closed.
+-->Calling of super should be done at very beginning of the constructor, because the bydefalut call for the constructor of parent class using super is done implicitly at starting of the constructor of child class so it should be done at the same time to override the by default on;
+-->The JPanel class in Java is part of the Swing library and serves as a generic container for holding and organizing GUI components within a window. It is a versatile and commonly used component that helps in creating complex user interfaces by allowing developers to group related components together, manage their layout, and add additional functionality.
+-->Difference between JFrame and teh JPanel
+    -->JFrame:
+        -->It is a top-level container that represents a window in a desktop application.
+        -->It provides the main frame (window) where components can be added and displayed.
+        -->A JFrame can exist independently and is often the main entry point for a Swing application.
+    -->JPanel:
+        -->It is a lightweight container used to group and organize other components (like buttons, labels, etc.) within a window.
+        -->It is typically used for layout management, visual organization, and grouping related components.
+        -->A JPanel cannot function as an independent window; it must be added to a top-level container like JFrame.
+-->The pack() method in Java's Swing library is used with top-level containers, such as JFrame, to automatically size the frame based on the preferred sizes and layouts of its contained components. When you call pack(), it arranges the components within the frame and sets the frame's size to fit these components optimally.
+-->ImageIcon :
+    -->This is a class in the javax.swing package that represents an icon (typically an image) that can be displayed on components like buttons, labels, etc.
+    -->The ImageIcon class is widely used in Swing applications to load and display images, like icons or visual indicators, in the user interface.
+    -->The constructor of ImageIcon can take various types of inputs (like a file path, URL, or Image object) to create an icon.
+-->ClassLoader.getSystemResource(...):
+    -->ClassLoader:
+        -->The ClassLoader is a built-in Java class that loads classes and resources (such as images, text files, etc.) dynamically at runtime.
+        -->It searches for the resource (in this case, an image file) within the classpath of the application.
+    -->getSystemResources( String name of path):
+        -->This is a static method of the ClassLoader class that searches for a resource with the given name (the path to the resource) and returns a URL to that resource.
+        -->The resource is typically a file like an image, sound file, or configuration file packaged within the application’s directory structure.
+        -->The resource must be present in the classpath (usually in the src or resources folder
+-->The Image class in the AWT (Abstract Window Toolkit) package is an abstract superclass for all image handling in Java. It represents graphical images that can be loaded from a variety of sources such as files, URLs, or produced dynamically.
+-->Study about this image class of awt !
+-->The top left corner of the component( Screen or panel or frame) is the (0,0) and on moving right x increases while on moving down y does, this is the coordinate system of the Java GUI;
+-->public void paintComponent( Graphics g){
+        super.paintComponent( g);
+        
+        draw( g);
+    }
+    -->paintComponent:
+        -->A method defined in JPanel that is responsible for custom drawing. It is overridden when you want to paint/draw something on a JPanel or any other Swing component.
+    -->Graphics g:
+        -->The parameter passed into the method is an instance of the Graphics class, which provides drawing tools (like colors, fonts, shapes, images, etc.). g is the object that will allow you to draw on the panel.
+        -->Means we have g as object of Graphics class for accessing the methods of the class;
+    -->draw( g);
+        -->This is a custom method defined by you, not part of the Java API. It is used to handle custom drawing logic, which in this case involves drawing multiple images (like the snake's head and body).
